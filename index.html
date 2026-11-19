@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream EntertainmentBT</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Arial, sans-serif}
+  body{background:#0f0f0f;color:white;text-align:center;line-height:1.6}
+  
+  /* হেডার ও লোগো */
+  .top{padding:45px 20px 30px;background:linear-gradient(180deg,#ff0055,#0f0f0f);position:relative}
+  .lang-switch{position:absolute;top:15px;right:15px}
+  .lang-btn{background:rgba(0,0,0,0.6);color:white;border:1px solid rgba(255,255,255,0.3);padding:6px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:bold;transition:0.3s}
+  .lang-btn:hover{background:white;color:#ff0055}
+
+  .logo-wrap{width:125px;height:125px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;overflow:hidden;box-shadow:0 4px 20px rgba(255,0,85,0.5);border:3px solid #fff}
+  .logo-wrap img{width:100%;height:100%;object-fit:cover}
+  .logo-fallback{color:#ff0055;font-size:22px;font-weight:900;line-height:1.1}
+
+  h1{font-size:32px;line-height:1.2;letter-spacing:0.5px}
+  .tag{margin-top:10px;color:#ffd1e0;font-size:16px}
+  
+  /* বাটন ও অ্যানিমেশন */
+  .btn{
+    display:inline-block;
+    margin-top:18px;
+    background:#ff0000;
+    color:white;
+    padding:12px 26px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+    border:none;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  }
+  .btn:hover{
+    transform:translateY(-4px) scale(1.04);
+    box-shadow:0 8px 20px rgba(255,0,85,0.5);
+    filter:brightness(1.1);
+  }
+  .btn:active{transform:translateY(0) scale(0.98)}
+
+  .section{padding:28px 20px;max-width:700px;margin:auto}
+  .section h2{margin-bottom:14px;font-size:24px}
+  .box{background:#1c1c1c;padding:20px;border-radius:15px;margin:12px 0;text-align:left;transition:transform 0.3s ease;border:1px solid #2a2a2a}
+  .box:hover{transform:translateY(-3px);border-color:#ff0055}
+  .box h3{color:#ffcc00;margin-bottom:6px;font-size:19px}
+  .box p{color:#ddd;font-size:15px}
+
+  /* ভিডিও রিকোয়েস্ট ফর্ম */
+  .req-form{background:#1c1c1c;padding:22px;border-radius:15px;text-align:left;border:1px solid #2a2a2a}
+  .req-form label{display:block;margin-bottom:6px;color:#ffcc00;font-weight:bold;font-size:14px}
+  .req-form input, .req-form textarea, .req-form select{
+    width:100%;padding:12px;margin-bottom:14px;border-radius:10px;border:1px solid #333;background:#0f0f0f;color:white;font-size:15px
+  }
+  .req-form input:focus, .req-form textarea:focus, .req-form select:focus{outline:none;border-color:#ff0055}
+
+  /* কন্টাক্ট ও কপি ইমেইল */
+  .email-box{background:#1c1c1c;padding:15px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;margin-top:12px;border:1px solid #333;flex-wrap:wrap;justify-content:center}
+  .copy-btn{background:#333;color:white;border:none;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:bold;transition:0.3s}
+  .copy-btn:hover{background:#ffcc00;color:#0f0f0f}
+
+  .footer{padding:22px;color:#aaa;font-size:14px;border-top:1px solid #222;margin-top:25px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="lang-switch">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">English / বাংলা</button>
+  </div>
+
+  <div class="logo-wrap">
+    <img src="logo.png" alt="Dream EntertainmentBT Logo" onerror="this.style.display='none';document.getElementById('fallbackLogo').style.display='block';">
+    <div id="fallbackLogo" class="logo-fallback" style="display:none;">DE<br><span style="font-size:11px;color:#111">নাটক এক্সপ্রেশন</span></div>
+  </div>
+
+  <h1>🎬 Dream EntertainmentBT 🎬</h1>
+  <p class="tag" data-bn="😂 কমেডি, ফান এবং অ্যাকশন - সব এক জায়গায়! 🔥" data-en="😂 Comedy, Fun and Action - All in One Place! 🔥">😂 কমেডি, ফান এবং অ্যাকশন - সব এক জায়গায়! 🔥</p>
+  <a class="btn" href="https://youtube.com/@dreamentertainmentbt?si=xPMGw_zaZ0R3TxH1" target="_blank" data-bn="▶️ ইউটিউবে সাবস্ক্রাইব করুন 🔔" data-en="▶️ Subscribe on YouTube 🔔">▶️ ইউটিউবে সাবস্ক্রাইব করুন 🔔</a>
+</div>
+
+<div class="section">
+  <h2 data-bn="✨ আমাদের চ্যানেল সম্পর্কে ✨" data-en="✨ About Our Channel ✨">✨ আমাদের চ্যানেল সম্পর্কে ✨</h2>
+  <p style="color:#ddd;font-size:16px" data-bn="Dream EntertainmentBT একটি বাংলাদেশি বিনোদনমূলক ইউটিউব চ্যানেল। 🇧🇩 এখানে আপনি পাবেন সেরা সব ফানি মিমস, নাটকের মজার অংশ, কমেডি ভিডিও এবং দারুণ সব অ্যাকশন ভিডিও। 🎭 মন খারাপ থাকলে আমাদের ভিডিও দেখুন, হাসিতে মন ভালো হয়ে যাবে! 😍" data-en="Dream EntertainmentBT is a Bangladeshi entertainment YouTube channel. 🇧🇩 Here you will find different funny memes, funniest parts of dramas, comedy videos and amazing action videos. 🎭 If you feel sad, just watch our videos and your mood will be fresh with laughter! 😍">
+    Dream EntertainmentBT একটি বাংলাদেশি বিনোদনমূলক ইউটিউব চ্যানেল। 🇧🇩 এখানে আপনি পাবেন সেরা সব ফানি মিমস, নাটকের মজার অংশ, কমেডি ভিডিও এবং দারুণ সব অ্যাকশন ভিডিও। 🎭 মন খারাপ থাকলে আমাদের ভিডিও দেখুন, হাসিতে মন ভালো হয়ে যাবে! 😍
+  </p>
+</div>
+
+<div class="section">
+  <h2 data-bn="🎥 আমরা কী ধরনের ভিডিও বানাই? 🎥" data-en="🎥 What We Make? 🎥">🎥 আমরা কী ধরনের ভিডিও বানাই? 🎥</h2>
+  <div class="box">
+    <h3 data-bn="😂 ফানি মিমস (Funny Memes)" data-en="😂 Funny Memes">😂 ফানি মিমস (Funny Memes)</h3>
+    <p data-bn="ভাইরাল এবং নতুন সব মজার মিমস ভিডিও 🤣" data-en="Viral and new funny memes videos 🤣">ভাইরাল এবং নতুন সব মজার মিমস ভিডিও 🤣</p>
+  </div>
+  <div class="box">
+    <h3 data-bn="🎭 নাটকের ফানি পার্ট (Drama Funny Parts)" data-en="🎭 Drama Funny Parts">🎭 নাটকের ফানি পার্ট (Drama Funny Parts)</h3>
+    <p data-bn="জনপ্রিয় নাটকগুলোর সেরা হাসির দৃশ্যগুলো এক জায়গায় 😆" data-en="Best funny scenes from dramas in one place 😆">জনপ্রিয় নাটকগুলোর সেরা হাসির দৃশ্যগুলো এক জায়গায় 😆</p>
+  </div>
+  <div class="box">
+    <h3 data-bn="🔥 অ্যাকশন ভিডিও (Action Videos)" data-en="🔥 Action Videos">🔥 অ্যাকশন ভিডিও (Action Videos)</h3>
+    <p data-bn="দারুণ সব অ্যাকশন এবং থ্রিলার ধাঁচের ভিডিও 💥" data-en="Awesome action and thriller type videos 💥">দারুণ সব অ্যাকশন এবং থ্রিলার ধাঁচের ভিডিও 💥</p>
+  </div>
+  <div class="box">
+    <h3 data-bn="🤣 কমেডি ভিডিও (Comedy Videos)" data-en="🤣 Comedy Videos">🤣 কমেডি ভিডিও (Comedy Videos)</h3>
+    <p data-bn="প্রাণখুলে হাসার মতো সেরা কমেডি কনটেন্ট 😁" data-en="Funny content to make you laugh out loud 😁">প্রাণখুলে হাসার মতো সেরা কমেডি কনটেন্ট 😁</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2 data-bn="📺 সর্বশেষ ভিডিওসমূহ 📺" data-en="📺 Latest Videos 📺">📺 সর্বশেষ ভিডিওসমূহ 📺</h2>
+  <a class="btn" style="background:#222;border:1px solid #444" href="https://youtube.com/@dreamentertainmentbt?si=xPMGw_zaZ0R3TxH1" target="_blank" data-bn="▶️ সব ভিডিও দেখুন" data-en="▶️ Watch All Videos">▶️ সব ভিডিও দেখুন</a>
+</div>
+
+<div class="section">
+  <h2 data-bn="💡 ভিডিও রিকোয়েস্ট ও মতামত 💡" data-en="💡 Video Request & Feedback 💡">💡 ভিডিও রিকোয়েস্ট ও মতামত 💡</h2>
+  <p style="margin-bottom:14px;color:#ccc" data-bn="আপনি কোন নাটকের ফানি পার্ট বা কী ধরনের ভিডিও দেখতে চান তা আমাদের জানান:" data-en="Let us know which drama funny part or video type you want to watch next:">আপনি কোন নাটকের ফানি পার্ট বা কী ধরনের ভিডিও দেখতে চান তা আমাদের জানান:</p>
+  
+  <form class="req-form" onsubmit="sendRequest(event)">
+    <label data-bn="আপনার নাম (Your Name):" data-en="Your Name:">আপনার নাম (Your Name):</label>
+    <input type="text" id="reqName" required placeholder="আপনার নাম লিখুন / Enter your name">
+
+    <label data-bn="ভিডিওর ধরন (Category):" data-en="Video Category:">ভিডিওর ধরন (Category):</label>
+    <select id="reqCat">
+      <option value="Drama Funny Part">🎭 নাটকের ফানি পার্ট (Drama Funny Part)</option>
+      <option value="Funny Memes">😂 ফানি মিমস (Funny Memes)</option>
+      <option value="Comedy Video">🤣 কমেডি ভিডিও (Comedy Video)</option>
+      <option value="Action Video">🔥 অ্যাকশন ভিডিও (Action Video)</option>
+    </select>
+
+    <label data-bn="আপনার মতামত বা রিকোয়েস্ট (Message):" data-en="Your Request or Feedback:">আপনার মতামত বা রিকোয়েস্ট (Message):</label>
+    <textarea id="reqMsg" rows="3" required placeholder="বিস্তারিত লিখুন... / Write your message..."></textarea>
+
+    <button type="submit" class="btn" style="width:100%;margin-top:5px;background:#ff0055" data-bn="🚀 মতামত পাঠান (Send Request)" data-en="🚀 Send Request">🚀 মতামত পাঠান (Send Request)</button>
+  </form>
+</div>
+
+<div class="section">
+  <h2 data-bn="📩 যোগাযোগ করুন (Contact Us) 📩" data-en="📩 Contact Us 📩">📩 যোগাযোগ করুন (Contact Us) 📩</h2>
+  <p style="color:#ccc" data-bn="স্পন্সরশিপ বা যেকোনো প্রয়োজনে সরাসরি ইমেইল করুন:" data-en="For business inquiries, sponsorships, or feedback:">স্পন্সরশিপ বা যেকোনো প্রয়োজনে সরাসরি ইমেইল করুন:</p>
+  
+  <div>
+    <a class="btn" style="background:#ff0055" href="mailto:likethatvi0@gmail.com" data-bn="✉️ সরাসরি ইমেইল পাঠান" data-en="✉️ Email Us Directly">✉️ সরাসরি ইমেইল পাঠান</a>
+  </div>
+
+  <div class="email-box">
+    <span id="emailText" style="color:#ffcc00;font-weight:bold">likethatvi0@gmail.com</span>
+    <button class="copy-btn" onclick="copyEmail()" id="copyBtn">📋 Copy Email</button>
+  </div>
+</div>
+
+<div class="footer">© 2026 Dream EntertainmentBT | All Rights Reserved ❤️</div>
+
+<script>
+  let currentLang = 'bn';
+
+  function toggleLang() {
+    currentLang = currentLang === 'bn' ? 'en' : 'bn';
+    document.querySelectorAll('[data-bn]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + currentLang);
+    });
+  }
+
+  function copyEmail() {
+    const email = document.getElementById('emailText').textContent;
+    navigator.clipboard.writeText(email).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = currentLang === 'bn' ? '✅ কপি হয়েছে!' : '✅ Copied!';
+      btn.style.background = '#28a745';
+      btn.style.color = 'white';
+      setTimeout(() => {
+        btn.textContent = '📋 Copy Email';
+        btn.style.background = '#333';
+        btn.style.color = 'white';
+      }, 2500);
+    });
+  }
+
+  function sendRequest(e) {
+    e.preventDefault();
+    const name = document.getElementById('reqName').value;
+    const cat = document.getElementById('reqCat').value;
+    const msg = document.getElementById('reqMsg').value;
+    
+    const subject = encodeURIComponent("Video Request (" + cat + ") from " + name);
+    const body = encodeURIComponent("Name: " + name + "\nCategory: " + cat + "\n\nMessage:\n" + msg);
+    
+    window.location.href = "mailto:likethatvi0@gmail.com?subject=" + subject + "&body=" + body;
+  }
+</script>
+
+</body>
+</html>
